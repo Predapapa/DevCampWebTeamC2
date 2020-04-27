@@ -3,7 +3,8 @@
 	displayBlock="true" 
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout">
-
+		
+		<Shell>
 		<App id="app">
 			<l:HorizontalLayout class="sapUiContentPadding" >
 			<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Customer"
@@ -21,5 +22,6 @@
 			</GenericTile>
 			</l:HorizontalLayout>
 		</App>
+		</Shell>
 
 </mvc:View>
