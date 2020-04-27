@@ -16,7 +16,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		 <start-class>com.sap.devcamp.stepat.bookshop</start-class>
+		 <start-class>com.sap.devcamp.stepat.bookshop.Demo1Application</start-class>
 	</properties>
 
 	<dependencies>

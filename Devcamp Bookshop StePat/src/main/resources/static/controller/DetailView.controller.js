@@ -22,8 +22,11 @@ sap.ui.define([
 			
 			if(sIsbn){
 				var oBookModel = new JSONModel();
-				oBookModel.loadData("api/v1/"+sIsbn);
+				oBookModel.loadData("/api/v1/"+sIsbn);
 				this.getView().setModel(oBookModel);
+			}
+			else{
+				console.log("hey");
 			}
 			
 			
