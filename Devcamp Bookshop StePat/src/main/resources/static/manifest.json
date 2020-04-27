@@ -1,0 +1,117 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "BWATC.BookstoreWebAppTC",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		},
+		"dataSources": {
+   			"bookDataSourceCustomer": {
+      			"uri": "api/v1/customer/getBooks",
+      			"type": "JSON",
+      			"settings": {
+      }
+	  }		
+	}
+		
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "BWATC.BookstoreWebAppTC.view.MainView",
+			"type": "XML",
+			"async": true,
+			"id": "MainView"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "BWATC.BookstoreWebAppTC.i18n.i18n"
+				}
+			},
+				"": {
+				"dataSource" : "bookDataSourceCustomer",
+				"settings": {
+					"defaultBindingMode" : "OneWay"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "BWATC.BookstoreWebAppTC.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [{
+				"name": "RouteMainView",
+				"pattern": "RouteMainView",
+				"target": ["TargetMainView"]
+			}
+			,{	"name": "detail",
+				"pattern": "detail/{isbn}" ,
+				"target": ["TargetDetailView"]
+			}],
+			"targets": {
+				"TargetMainView": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "MainView",
+					"viewName": "MainView"
+				},
+				"TargetDetailView": {
+					"viewId": "DetailView",
+					"viewName": "DetailView"
+				}
+			}
+		}
+	}
+}

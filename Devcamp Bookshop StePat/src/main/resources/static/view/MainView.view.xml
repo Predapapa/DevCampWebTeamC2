@@ -1,0 +1,35 @@
+<mvc:View controllerName="BWATC.BookstoreWebAppTC.controller.MainView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<List
+		items="{/}"
+		headerText="Books">
+		<ObjectListItem
+			title="{title}"
+			type="Active"
+			icon="sap-icon://course-book"
+			press=".onPress"
+			>
+			<firstStatus>
+				<ObjectStatus
+					text="Available"
+					 />
+			</firstStatus>
+			<secondStatus>
+				<ObjectStatus
+					text="{price} EUR"
+					/>
+			</secondStatus>
+			<ObjectAttribute text="from {author}"/>
+			<ObjectAttribute title="isbn" text="{isbn}"/>
+		</ObjectListItem>
+	</List>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

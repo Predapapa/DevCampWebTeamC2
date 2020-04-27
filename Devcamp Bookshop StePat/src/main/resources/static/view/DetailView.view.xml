@@ -1,0 +1,32 @@
+<mvc:View controllerName="BWATC.BookstoreWebAppTC.controller.DetailView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}"
+				binding="{/}">
+					<content>
+						<List id="ShortProductList"
+						headerText="Books"
+						items="{/}">
+							<items>
+								<ObjectListItem
+								icon="sap-icon://education"
+								title="{title}"
+								>
+								</ObjectListItem>
+						
+						
+							</items>
+						
+						
+						
+						
+						
+						
+						</List>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
