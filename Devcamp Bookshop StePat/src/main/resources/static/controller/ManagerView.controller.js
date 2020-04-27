@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast",
-	"sap/ui/model/json/JSONModel"
-], function (Controller, MessageToast, JSONModel) {
+	"sap/ui/model/json/JSONModel",
+	"sap/ui/core/routing/History"
+], function (Controller, MessageToast, JSONModel, History) {
 	"use strict";
 
 	return Controller.extend("BWATC.BookstoreWebAppTC.controller.ManagerView", {
@@ -22,7 +23,12 @@ sap.ui.define([
 //			MessageToast.show("Book: "+ oListItemData.isbn + " has been pressed")
 			},
 		onNavBack: function() {
-	        window.location.replace("http://localhost:8282");
+			var oHistory = History.getInstance();
+			var sPreviousHash = oHistory.getPreviousHash();
+
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			}
 		}
 	
 });

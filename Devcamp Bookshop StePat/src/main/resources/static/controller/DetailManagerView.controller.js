@@ -35,7 +35,12 @@ sap.ui.define([
 		},
 		
 		onNavBack: function() {
-	        window.location.replace("http://localhost:8282/#/managerMain");
+			var oHistory = History.getInstance();
+			var sPreviousHash = oHistory.getPreviousHash();
+
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			}
 		}
 	
 
