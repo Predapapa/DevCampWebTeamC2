@@ -1,8 +1,10 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast",
-	"sap/ui/model/json/JSONModel"
-], function (Controller, MessageToast, JSONModel) {
+	"sap/ui/model/json/JSONModel",
+	"sap/ui/core/routing/History",
+	"sap/ui/core/UIComponent"
+], function (Controller, MessageToast, JSONModel, History, UIComponent) {
 	"use strict";
 
 	return Controller.extend("BWATC.BookstoreWebAppTC.controller.DetailView", {
@@ -30,6 +32,14 @@ sap.ui.define([
 			}
 			
 			
+		},
+		
+		onNavBack: function() {
+			
+			 var oHistory = History.getInstance();
+	            var sPreviousHash = oHistory.getPreviousHash();
+	            window.location.replace("http://localhost:8282");
+
 		}
 	
 

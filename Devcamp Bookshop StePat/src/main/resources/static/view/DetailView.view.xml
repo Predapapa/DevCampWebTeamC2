@@ -2,17 +2,30 @@
 	<Shell id="shell">
 		<App id="app">
 			<pages>
-				<Page id="page" title="{i18n>title}"
+				<Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress=".onNavBack"
 				binding="{/}">
 					<content>
 						<List id="ShortProductList"
-						headerText="Booksxyz"
 						>
 							
 								<ObjectListItem
-								icon="sap-icon://education"
+								icon="sap-icon://course-book"
 								title="{title}"
 								>
+								<firstStatus>
+				<ObjectStatus
+					text="{stock} in Stock"
+					 />
+			</firstStatus>
+			<secondStatus>
+				<ObjectStatus
+					text="{price} EUR"
+					/>
+			</secondStatus>
+			<ObjectAttribute text="from {author}"/>
+			<ObjectAttribute title="Isbn" text="{isbn}"/>
+			<ObjectAttribute text="Editor: {editor}"/>
+			<ObjectAttribute text="Published: {pubyear}" />
 								</ObjectListItem>
 						
 						
