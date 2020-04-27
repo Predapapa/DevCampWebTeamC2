@@ -23,7 +23,7 @@
 					/>
 			</secondStatus>
 			<ObjectAttribute text="from {author}"/>
-			<ObjectAttribute title="Isbn" text="{isbn}"/>
+			<ObjectAttribute title="Isbn" text="{isbn}" />
 			<ObjectAttribute text="Editor: {editor}"/>
 			<ObjectAttribute text="Published: {pubyear}" />
 								</ObjectListItem>

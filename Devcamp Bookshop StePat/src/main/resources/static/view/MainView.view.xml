@@ -24,7 +24,7 @@
 					/>
 			</secondStatus>
 			<ObjectAttribute text="from {author}"/>
-			<ObjectAttribute title="isbn" text="{isbn}"/>
+			<!-- <ObjectAttribute title="isbn" text="{isbn}"/> -->
 		</ObjectListItem>
 	</List>
 					</content>

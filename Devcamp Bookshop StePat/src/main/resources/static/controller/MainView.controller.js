@@ -19,7 +19,7 @@ sap.ui.define([
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("detail",{
 				"isbn":oListItemData.isbn});
-			MessageToast.show("Book: "+ oListItemData.isbn + " has been pressed")
+//			MessageToast.show("Book: "+ oListItemData.isbn + " has been pressed")
 			}
 			
 			
