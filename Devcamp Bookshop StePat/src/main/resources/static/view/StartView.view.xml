@@ -1,0 +1,25 @@
+<mvc:View controllerName="BWATC.BookstoreWebAppTC.controller.StartView" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	displayBlock="true" 
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout">
+	<Shell id="shell">
+		<App id="app">
+			<l:HorizontalLayout class="sapUiContentPadding" >
+			<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Customer"
+				subheader="View for Customer" press="press">
+				<TileContent>
+					<ImageContent src="sap-icon://course-book" />
+				</TileContent>
+			</GenericTile>
+
+			<GenericTile header="Manager" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+				subheader="View for Manager" press="press2">
+				<TileContent>
+					<ImageContent src="sap-icon://course-book" />
+				</TileContent>
+			</GenericTile>
+			</l:HorizontalLayout>
+		</App>
+	</Shell>
+</mvc:View>

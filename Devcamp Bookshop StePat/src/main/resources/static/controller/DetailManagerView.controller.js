@@ -7,11 +7,11 @@ sap.ui.define([
 ], function (Controller, MessageToast, JSONModel, History, UIComponent) {
 	"use strict";
 
-	return Controller.extend("BWATC.BookstoreWebAppTC.controller.DetailView", {
+	return Controller.extend("BWATC.BookstoreWebAppTC.controller.DetailManagerView", {
 		
 		onInit: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.getRoute("detail").attachPatternMatched(this._onObjectMatched,this);
+			oRouter.getRoute("detailManager").attachPatternMatched(this._onObjectMatched,this);
 		},
 		
 		_onObjectMatched: function(oEvent){
@@ -35,8 +35,7 @@ sap.ui.define([
 		},
 		
 		onNavBack: function() {
-	            window.location.replace("http://localhost:8282/#/RouteMainView");
-
+	        window.location.replace("http://localhost:8282/#/managerMain");
 		}
 	
 

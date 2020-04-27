@@ -1,4 +1,4 @@
-<mvc:View controllerName="BWATC.BookstoreWebAppTC.controller.MainView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View controllerName="BWATC.BookstoreWebAppTC.controller.ManagerView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
 	<Shell id="shell">
 		<App id="app">
 			<pages>
@@ -24,8 +24,8 @@
 					/>
 			</secondStatus>
 			<ObjectAttribute text="from {author}"/>
-			<!-- <ObjectAttribute text="isbn" text="{isbn}"/> -->
-			<!-- <ObjectAttribute text="uuid" text="{uuid}"/> -->
+			<ObjectAttribute title="isbn" text="{isbn}"/>
+			<ObjectAttribute title="uuid" text="{uuid}"/>
 		</ObjectListItem>
 	</List>
 					</content>

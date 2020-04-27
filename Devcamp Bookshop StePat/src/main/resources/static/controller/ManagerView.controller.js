@@ -5,7 +5,7 @@ sap.ui.define([
 ], function (Controller, MessageToast, JSONModel) {
 	"use strict";
 
-	return Controller.extend("BWATC.BookstoreWebAppTC.controller.MainView", {
+	return Controller.extend("BWATC.BookstoreWebAppTC.controller.ManagerView", {
 		onInit: function () {
 			
 		},
@@ -17,21 +17,14 @@ sap.ui.define([
 				oSource.getBindingContext().getObject();
 			
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("detail",{
+			oRouter.navTo("detailManager",{
 				"isbn":oListItemData.isbn});
 //			MessageToast.show("Book: "+ oListItemData.isbn + " has been pressed")
 			},
-			
 		onNavBack: function() {
 	        window.location.replace("http://localhost:8282");
-		}	
-			
-			
-		
+		}
 	
-
-		
-
 });
 	
 });

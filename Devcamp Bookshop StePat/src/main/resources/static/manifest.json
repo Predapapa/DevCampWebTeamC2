@@ -15,7 +15,7 @@
 		},
 		"dataSources": {
    			"bookDataSourceCustomer": {
-      			"uri": "api/v1/customer/getBooks",
+      			"uri": "api/v1/manager/getBooks",
       			"type": "JSON",
       			"settings": {
       }
@@ -44,10 +44,10 @@
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
-			"viewName": "BWATC.BookstoreWebAppTC.view.MainView",
+			"viewName": "BWATC.BookstoreWebAppTC.view.StartView",
 			"type": "XML",
 			"async": true,
-			"id": "MainView"
+			"id": "StartView"
 		},
 		"dependencies": {
 			"minUI5Version": "1.65.6",
@@ -71,7 +71,7 @@
 				"": {
 				"dataSource" : "bookDataSourceCustomer",
 				"settings": {
-					"defaultBindingMode" : "OneWay"
+					"defaultBindingMode" : "TwoWay"
 				}
 			}
 		},
@@ -91,15 +91,33 @@
 				"clearControlAggregation": false
 			},
 			"routes": [{
-				"name": "RouteMainView",
+				"name": "start",
+				"pattern": "RouteStartView",
+				"target": ["TargetStartView"]
+			},
+			{
+				"name": "mainView",
 				"pattern": "RouteMainView",
 				"target": ["TargetMainView"]
-			}
-			,{	"name": "detail",
+			},
+			{	"name": "detail",
 				"pattern": "detail/{isbn}" ,
 				"target": ["TargetDetailView"]
+			},
+			{	"name": "managerMain",
+				"pattern": "managerMain",
+				"target": ["TargetManagerView"]
+			},
+			{
+				"name": "detailManager",
+				"pattern": "detailManager/{isbn}",
+				"target": ["TargetManagerDetailView"]
 			}],
 			"targets": {
+				"TargetStartView": {
+					"viewId": "StartView",
+					"viewName": "StartView"
+				},
 				"TargetMainView": {
 					"viewType": "XML",
 					"transition": "slide",
@@ -110,6 +128,14 @@
 				"TargetDetailView": {
 					"viewId": "DetailView",
 					"viewName": "DetailView"
+				},
+				"TargetManagerView": {
+					"viewId": "ManagerView",
+					"viewName": "ManagerView"
+				},
+				"TargetManagerDetailView": {
+					"viewId": "DetailManagerView",
+					"viewName": "DetailManagerView"
 				}
 			}
 		}
