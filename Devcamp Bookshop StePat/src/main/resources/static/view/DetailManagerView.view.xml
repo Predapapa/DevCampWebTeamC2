@@ -8,6 +8,12 @@ xmlns="sap.m">
 			<pages>
 				<Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress=".onNavBack"
 				binding="{/}">
+				<Toolbar>
+					<ToolbarSpacer/>
+					<Button type="Reject" text="Delete Book" press="onDelete"/>
+					<Button type="Default" text="Edit Book" press="onEdit"/>
+					<ToolbarSpacer/>
+				</Toolbar>
 					<content>
 						<List id="ShortProductList"
 						>

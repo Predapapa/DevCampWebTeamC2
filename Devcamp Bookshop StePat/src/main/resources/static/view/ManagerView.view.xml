@@ -1,12 +1,20 @@
-<mvc:View controllerName="BWATC.BookstoreWebAppTC.controller.ManagerView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View controllerName="BWATC.BookstoreWebAppTC.controller.ManagerView" 
+xmlns:mvc="sap.ui.core.mvc" 
+displayBlock="true" 
+xmlns:l="sap.ui.layout"
+xmlns="sap.m">
 
 		<App>
 			<pages>
 				<Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress=".onNavBack">
 					<content>
+					<Toolbar>
+					<Title text="Books" level="H2" />
+					<ToolbarSpacer/>
+					<Button type="Accept" text="Create Book" press="onCreate"/>
+					</Toolbar>
 						<List
-		items="{/}"
-		headerText="Books">
+		items="{/}">
 		<ObjectListItem
 			title="{title}"
 			type="Active"

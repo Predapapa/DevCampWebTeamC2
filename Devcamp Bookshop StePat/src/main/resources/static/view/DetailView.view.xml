@@ -1,12 +1,13 @@
-<mvc:View controllerName="BWATC.BookstoreWebAppTC.controller.DetailView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View controllerName="BWATC.BookstoreWebAppTC.controller.DetailView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" 
+
+xmlns="sap.m">
 	
 		<App >
 			<pages>
 				<Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress=".onNavBack"
 				binding="{/}">
 					<content>
-						<List id="ShortProductList"
-						>
+						<List id="ShortProductList">
 							
 								<ObjectListItem
 								icon="sap-icon://course-book"
@@ -27,15 +28,6 @@
 			<ObjectAttribute text="Editor: {editor}"/>
 			<ObjectAttribute text="Published: {pubyear}" />
 								</ObjectListItem>
-						
-						
-							
-						
-						
-						
-						
-						
-						
 						</List>
 					</content>
 				</Page>
