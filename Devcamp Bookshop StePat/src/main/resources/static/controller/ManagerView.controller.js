@@ -4,8 +4,9 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/routing/History",
 	"sap/ui/core/Fragment",
-	"sap/ui/model/resource/ResourceModel"
-], function (Controller, MessageToast, JSONModel, History, Fragment, ResourceModel) {
+	"sap/ui/model/resource/ResourceModel",
+	"sap/ui/core/UIComponent"
+], function (Controller, MessageToast, JSONModel, History, Fragment, ResourceModel, UIComponent) {
 	"use strict";
 
 	return Controller.extend("BWATC.BookstoreWebAppTC.controller.ManagerView", {
@@ -31,6 +32,9 @@ sap.ui.define([
 
 			if (sPreviousHash !== undefined) {
 				window.history.go(-1);
+			}else {
+				var oRouter = UIComponent.getRouterFor(this);
+				oRouter.navTo("start", {}, true);
 			}
 		},
 	
@@ -71,9 +75,13 @@ sap.ui.define([
 			// var oBundle = this.getView().getModel("i18n").getResourceBundle();
 			// var sTitle = this.getView().getModel().getProperty("/title");
 			// MessageToast.show(sTitle);
+		},
+		
+		onUpdate: function() {
+			location.reload();
 		}
 		
-
+        
 });
 	
 });

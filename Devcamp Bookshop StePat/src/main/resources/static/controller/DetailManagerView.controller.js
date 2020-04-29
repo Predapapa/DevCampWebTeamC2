@@ -40,6 +40,9 @@ sap.ui.define([
 
 			if (sPreviousHash !== undefined) {
 				window.history.go(-1);
+			}else {
+				var oRouter = UIComponent.getRouterFor(this);
+				oRouter.navTo("managerMain", {}, true);
 			}
 		},
 		
@@ -56,7 +59,8 @@ sap.ui.define([
 			}.bind(this));
 				 
 			
-			
+			var oRouter = UIComponent.getRouterFor(this);
+			oRouter.navTo("managerMain", {}, true);
 			
 			
 			

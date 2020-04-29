@@ -18,17 +18,23 @@ sap.ui.define([
 			var request = $.ajax({
 				  url: "api/v1/saveBook",
 				  method: "POST",
-				  data: JSON.stringify(this.getView().getModel("createBookModel").getProperty("/newBook")), 
+				  data: JSON.stringify(this.getView().getModel("applicationBookModel").getData()), 
 					    
 					    dataType: "json",
 					    contentType: "application/json"
 					    
 				  
 				});
+			
+			
 				 
 				request.done(function( msg ) {
 					MessageToast.show("Book created");
 				});
+				
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+				oRouter.navTo("managerMain",{
+					"isbn":this.getView().getModel("applicationBookModel").getProperty("isbn")});
 				 
 				request.fail(function( jqXHR, textStatus ) {
 				  alert( "Request failed: " + textStatus );

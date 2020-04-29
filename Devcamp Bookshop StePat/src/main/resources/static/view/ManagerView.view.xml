@@ -11,9 +11,11 @@ xmlns="sap.m">
 					<Toolbar>
 					<Title text="Books" level="H2" />
 					<ToolbarSpacer/>
+					<Button text="Update List" press="onUpdate"/>
 					<Button type="Accept" text="Create Book" press="onCreate"/>
 					</Toolbar>
 						<List
+							id="List1"
 							items="{/}">
 							<ObjectListItem
 								title="{title}"

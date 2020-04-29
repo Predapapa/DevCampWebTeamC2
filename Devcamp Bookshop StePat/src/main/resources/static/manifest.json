@@ -105,6 +105,7 @@
 			},
 			"routes": [{
 				"pattern": "",
+				"name": "start",
 				"target": ["TargetStartView"]
 			},
 			{
