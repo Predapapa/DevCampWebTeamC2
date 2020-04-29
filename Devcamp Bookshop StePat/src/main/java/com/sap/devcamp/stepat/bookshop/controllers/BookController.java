@@ -86,10 +86,10 @@ public class BookController {
 		return new ResponseEntity<>(bookService.findBookByTitle(title),HttpStatus.OK);
 	}
 	
-	@PutMapping(path = "/saveBook", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path = "/saveBook", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity saveBook(@RequestBody Book book) {
 		bookService.createBook(book);
-		return new ResponseEntity<>(null, HttpStatus.CREATED);
+		return new ResponseEntity<>(book, HttpStatus.CREATED);
 	}
 	
 	@PutMapping(path = "/updateBook", consumes = MediaType.APPLICATION_JSON_VALUE)

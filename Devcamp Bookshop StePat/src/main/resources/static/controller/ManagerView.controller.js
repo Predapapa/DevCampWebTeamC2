@@ -10,9 +10,7 @@ sap.ui.define([
 
 	return Controller.extend("BWATC.BookstoreWebAppTC.controller.ManagerView", {
 		onInit: function () {
-			// var i18nModel = new ResourceModel({
-			// 	bundleName: "BookstoreWebAppTC.i18n.i18n"
-			// });
+			
 		},
 		
 		onPress: function(oEvent){

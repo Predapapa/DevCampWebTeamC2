@@ -19,7 +19,13 @@
       			"type": "JSON",
       			"settings": {
       }
-	  }		
+	  },
+	  		"applicationBookData": {
+      			"uri": "model/applicationBookData.json",
+      			"type": "JSON",
+      			"settings": {
+      }
+	  }			
 	}
 		
 	},
@@ -73,7 +79,14 @@
 				"settings": {
 					"defaultBindingMode" : "TwoWay"
 				}
-			}
+			},
+				"applicationBookModel": {
+				"dataSource" : "",
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay"
+				}
+				}
 		},
 		"resources": {
 			"css": [{

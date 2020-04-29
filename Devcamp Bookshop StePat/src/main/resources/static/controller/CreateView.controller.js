@@ -13,29 +13,26 @@ sap.ui.define([
 		},
 
 		onSave: function() {
-			var sTitle = this.getView().byId("title").getValue();
-			var sAuthor = this.getView().byId("author").getValue();
-			var sEditor = this.getView().byId("editor").getValue();
-			var sIsbn = this.getView().byId("isbn").getValue();
-			var sStock = this.getView().byId("stock").getValue();
-			var sPubYear = this.getView().byId("pubYear").getValue();
-			var sPrice = this.getView().byId("price").getValue();
 
-			console.log(sTitle + sAuthor + sEditor + sIsbn + sStock + sPubYear + sPrice);
 			
-			var oBook = new JSONModel();
-			oBook.setData({
-			    title: sTitle,
-			    author: sAuthor,
-			    editor: sEditor,
-			    isbn: sIsbn,
-			    stock: sStock,
-			    pubyear: sPubYear,
-			    price: sPrice
-			});
-			
-			console.log(oBook);
-			
+			var request = $.ajax({
+				  url: "api/v1/saveBook",
+				  method: "POST",
+				  data: JSON.stringify(this.getView().getModel("createBookModel").getProperty("/newBook")), 
+					    
+					    dataType: "json",
+					    contentType: "application/json"
+					    
+				  
+				});
+				 
+				request.done(function( msg ) {
+					MessageToast.show("Book created");
+				});
+				 
+				request.fail(function( jqXHR, textStatus ) {
+				  alert( "Request failed: " + textStatus );
+				});
 			
 			
 			

@@ -17,17 +17,16 @@ xmlns="sap.m">
 				<Label text="Title" tooltip="Title"/>
 				<Input
 				id="title"
-				value="{/title}"
+				value="{applicationBookModel>/newBook/title}"
 				placeholder="Enter title"
 				width="300px"
 				fieldWidth="200px" />
 
 				<Label text="ISBN" tooltip="ISBN"/>
-				<MaskInput
+				<Input
 				id="isbn"
-				value="{/isbn}"
+				value="{applicationBookModel>/newBook/isbn}"
 				type="Number"
-				mask="9999999999999"
 				placeholder="Enter ISBN"
 				width="300px"
 				fieldWidth="200px"/>
@@ -35,7 +34,7 @@ xmlns="sap.m">
 				<Label text="Published Year" tooltip="pubYear"/>
 				<MaskInput
 				id="pubYear"
-				value="{/pubYear}"
+				value="{applicationBookModel>/newBook/pubYear}"
 				type="Number"
 				mask="9999"
 				placeholder="Enter year of publishing"
@@ -45,7 +44,7 @@ xmlns="sap.m">
 				<Label text="No. Stock" tooltip="stock"/>
 				<Input
 				id="stock"
-				value="{/stock}"
+				value="{applicationBookModel>/newBook/stock}"
 				type="Number"
 				placeholder="Enter stock"
 				width="300px"
@@ -54,7 +53,7 @@ xmlns="sap.m">
 				<Label text="Author" tooltip="Author"/>
 				<Input
 				id="author"
-				value="{/author}"
+				value="{applicationBookModel>/newBook/author}"
 				placeholder="Enter author"
 				width="300px"
 				fieldWidth="200px" />
@@ -62,7 +61,7 @@ xmlns="sap.m">
 				<Label text="Editor" tooltip="Editor"/>
 				<Input
 				id="editor"
-				value="{/editor}"
+				value="{applicationBookModel>/newBook/editor}"
 				placeholder="Enter editor"
 				width="300px"
 				fieldWidth="200px" />
@@ -70,7 +69,7 @@ xmlns="sap.m">
 				<Label text="Price" tooltip="price"/>
 				<Input
 				id="price"
-				value="{/price}"
+				value="{applicationBookModel>/newBook/price}"
 				type="Number"
 				placeholder="Enter price"
 				width="300px"

@@ -45,7 +45,21 @@ sap.ui.define([
 		
 		onDelete: function() {
 			var sUuid = this.getView().getModel().getProperty("/uuid");
-			console.log(sUuid);
+			
+			var request = $.ajax({
+				  url: "api/v1/deleteBook/" + sUuid,
+				  method: "DELETE"
+				});
+			
+			request.done(function( msg ) {
+				
+			}.bind(this));
+				 
+			
+			
+			
+			
+			
 		}
 	
 
