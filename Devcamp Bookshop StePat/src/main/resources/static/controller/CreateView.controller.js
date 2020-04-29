@@ -23,17 +23,18 @@ sap.ui.define([
 
 			console.log(sTitle + sAuthor + sEditor + sIsbn + sStock + sPubYear + sPrice);
 			
-//			var oBook = new JSONModel();
-//			oBook.setData({
-//			    title: sTitle,
-//			    author: sAuthor,
-//			    editor: sEditor,
-//			    isbn: sIsbn,
-//			    stock: sStock,
-//			    pubyear: sPubYear,
-//			    price: sPrice
-//			});
-//			
+			var oBook = new JSONModel();
+			oBook.setData({
+			    title: sTitle,
+			    author: sAuthor,
+			    editor: sEditor,
+			    isbn: sIsbn,
+			    stock: sStock,
+			    pubyear: sPubYear,
+			    price: sPrice
+			});
+			
+			console.log(oBook);
 			
 			
 			

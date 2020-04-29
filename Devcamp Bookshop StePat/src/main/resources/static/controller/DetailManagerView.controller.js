@@ -41,6 +41,11 @@ sap.ui.define([
 			if (sPreviousHash !== undefined) {
 				window.history.go(-1);
 			}
+		},
+		
+		onDelete: function() {
+			var sUuid = this.getView().getModel().getProperty("/uuid");
+			console.log(sUuid);
 		}
 	
 
