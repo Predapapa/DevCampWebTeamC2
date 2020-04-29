@@ -3,13 +3,16 @@ sap.ui.define([
 	"sap/m/MessageToast",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/routing/History",
-	"sap/ui/core/Fragment"
-], function (Controller, MessageToast, JSONModel, History, Fragment) {
+	"sap/ui/core/Fragment",
+	"sap/ui/model/resource/ResourceModel"
+], function (Controller, MessageToast, JSONModel, History, Fragment, ResourceModel) {
 	"use strict";
 
 	return Controller.extend("BWATC.BookstoreWebAppTC.controller.ManagerView", {
 		onInit: function () {
-			
+			// var i18nModel = new ResourceModel({
+			// 	bundleName: "BookstoreWebAppTC.i18n.i18n"
+			// });
 		},
 		
 		onPress: function(oEvent){
@@ -44,8 +47,9 @@ sap.ui.define([
             return this._oDialog;
         },
         
-        onCreate: function (oEvent) {
-            this._getDialog().open();
+        onCreate: function () {
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("create");
         },
        
         onCloseDialog: function () {
@@ -54,13 +58,24 @@ sap.ui.define([
        
         onSaveDialog: function (oEvent) {
 			// var testST = sap.ui.getCore().byId("newTitle").getValue();
-			var testST2 = this._getDialog("newTitle");
-            // var oSource = oEvent.getSource(),
-			// oListItemData=
-			// 	oSource.getObject();
-				
-			console.log(testST2);
-        }
+			// var testST2 = this._getDialog("newTitle");
+			var test3 = this.getView().newTitle;
+			var testST2 = sap.ui.getCore().byId("addBooksDialog--newTitle").getValue();
+			// var testST2 = sap.ui.xmlfragment().byId("addBooksDialog", "newTitle").getValue();
+            // // var oSource = oEvent.getSource(),
+			// // oListItemData=
+			// // 	oSource.getObject();
+			var test1 ={
+						"Title": testST2
+			}	
+			console.log("Test" + test1 + testST2);
+			MessageToast.show(test3)
+			// var oBundle = this.getView().getModel("i18n").getResourceBundle();
+			// var sTitle = this.getView().getModel().getProperty("/title");
+			// MessageToast.show(sTitle);
+		}
+		
+
 });
 	
 });

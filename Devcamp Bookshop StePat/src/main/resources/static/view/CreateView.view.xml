@@ -1,0 +1,81 @@
+<mvc:View controllerName="BWATC.BookstoreWebAppTC.controller.CreateView" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:form="sap.ui.layout.form"
+displayBlock="true" 
+xmlns:l="sap.ui.layout"
+xmlns="sap.m">
+	<App>
+		<Page>
+			
+				<Toolbar>
+					<Title text="Create a new book" level="H2" />
+					<ToolbarSpacer/>
+					<Button type="Accept" text="Save Book" press="onSave"/>
+					</Toolbar>
+			
+			<form:SimpleForm editable="true">
+				<Label text="Title" tooltip="Title"/>
+				<Input
+				id="title"
+				value="{/title}"
+				placeholder="Enter title"
+				width="300px"
+				fieldWidth="200px" />
+
+				<Label text="ISBN" tooltip="ISBN"/>
+				<MaskInput
+				id="isbn"
+				value="{/isbn}"
+				type="Number"
+				mask="9999999999999"
+				placeholder="Enter ISBN"
+				width="300px"
+				fieldWidth="200px"/>
+
+				<Label text="Published Year" tooltip="pubYear"/>
+				<MaskInput
+				id="pubYear"
+				value="{/pubYear}"
+				type="Number"
+				mask="9999"
+				placeholder="Enter year of publishing"
+				width="300px"
+				fieldWidth="200px"/>
+
+				<Label text="No. Stock" tooltip="stock"/>
+				<Input
+				id="stock"
+				value="{/stock}"
+				type="Number"
+				placeholder="Enter stock"
+				width="300px"
+				fieldWidth="200px"/>
+
+				<Label text="Author" tooltip="Author"/>
+				<Input
+				id="author"
+				value="{/author}"
+				placeholder="Enter author"
+				width="300px"
+				fieldWidth="200px" />
+
+				<Label text="Editor" tooltip="Editor"/>
+				<Input
+				id="editor"
+				value="{/editor}"
+				placeholder="Enter editor"
+				width="300px"
+				fieldWidth="200px" />
+
+				<Label text="Price" tooltip="price"/>
+				<Input
+				id="price"
+				value="{/price}"
+				type="Number"
+				placeholder="Enter price"
+				width="300px"
+				fieldWidth="200px"/>
+			</form:SimpleForm>
+		</Page>	
+	</App>
+</mvc:View>

@@ -111,6 +111,11 @@
 				"name": "detailManager",
 				"pattern": "detailManager/{isbn}",
 				"target": ["TargetManagerDetailView"]
+			},
+			{
+				"name": "create",
+				"pattern": "create",
+				"target": ["TargetCreateView"]
 			}],
 			"targets": {
 				"TargetStartView": {
@@ -134,6 +139,10 @@
 				"TargetManagerDetailView": {
 					"viewId": "DetailManagerView",
 					"viewName": "DetailManagerView"
+				},
+				"TargetCreateView": {
+					"viewId": "CreateView",
+					"viewName": "CreateView"
 				}
 			}
 		}

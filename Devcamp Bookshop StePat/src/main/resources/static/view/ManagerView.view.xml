@@ -14,28 +14,28 @@ xmlns="sap.m">
 					<Button type="Accept" text="Create Book" press="onCreate"/>
 					</Toolbar>
 						<List
-		items="{/}">
-		<ObjectListItem
-			title="{title}"
-			type="Active"
-			icon="sap-icon://course-book"
-			press=".onPress"
-			>
-			<firstStatus>
-				<ObjectStatus
-					text="Available"
-					 />
-			</firstStatus>
-			<secondStatus>
-				<ObjectStatus
-					text="{price} EUR"
-					/>
-			</secondStatus>
-			<ObjectAttribute text="from {author}"/>
-			<ObjectAttribute title="isbn" text="{isbn}"/>
-			<ObjectAttribute title="uuid" text="{uuid}"/>
-		</ObjectListItem>
-	</List>
+							items="{/}">
+							<ObjectListItem
+								title="{title}"
+								type="Active"
+								icon="sap-icon://course-book"
+								press=".onPress"
+								>
+								<firstStatus>
+									<ObjectStatus
+										text="Available"
+										 />
+								</firstStatus>
+								<secondStatus>
+									<ObjectStatus
+										text="{price} EUR"
+										/>
+								</secondStatus>
+								<ObjectAttribute text="from {author}"/>
+								<ObjectAttribute title="isbn" text="{isbn}"/>
+								<ObjectAttribute title="uuid" text="{uuid}"/>
+							</ObjectListItem>
+						</List>
 					</content>
 				</Page>
 			</pages>
