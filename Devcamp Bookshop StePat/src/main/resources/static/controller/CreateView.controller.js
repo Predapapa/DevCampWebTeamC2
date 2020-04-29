@@ -13,15 +13,16 @@ sap.ui.define([
 		},
 
 		onSave: function() {
-			var title = this.getView().byId("title").getValue();
-			var author = this.getView().byId("author").getValue();
-			var editor = this.getView().byId("editor").getValue();
-			var isbn = this.getView().byId("isbn").getValue();
-			var stock = this.getView().byId("stock").getValue();
-			var pubYear = this.getView().byId("pubYear").getValue();
-			var price = this.getView().byId("price").getValue();
+			var sTitle = this.getView().byId("title").getValue();
+			var sAuthor = this.getView().byId("author").getValue();
+			var sEditor = this.getView().byId("editor").getValue();
+			var sIsbn = this.getView().byId("isbn").getValue();
+			var sStock = this.getView().byId("stock").getValue();
+			var sPubYear = this.getView().byId("pubYear").getValue();
+			var sPrice = this.getView().byId("price").getValue();
 
-			console.log(title + author + editor + isbn + stock + pubYear + price);
+			console.log(sTitle + sAuthor + sEditor + sIsbn + sStock + sPubYear + sPrice);
+			
 			
 		}
 	});
