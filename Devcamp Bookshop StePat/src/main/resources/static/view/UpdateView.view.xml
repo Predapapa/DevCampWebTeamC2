@@ -5,10 +5,10 @@ displayBlock="true"
 xmlns:l="sap.ui.layout"
 xmlns="sap.m">
 	<App>
-		<Page>
+		<Page showNavButton="true" navButtonPress=".onNavBack">
 			
 				<Toolbar>
-					<Title text="Create a new book" level="H2" />
+					<Title text="Edit Book" level="H2" />
 					<ToolbarSpacer/>
 					<Button type="Accept" text="Save Book" press="onSave"/>
 					</Toolbar>

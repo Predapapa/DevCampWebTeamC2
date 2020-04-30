@@ -4,8 +4,9 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/routing/History",
 	"sap/ui/core/Fragment",
-	"sap/ui/model/resource/ResourceModel"
-], function (Controller, MessageToast, JSONModel, History, Fragment, ResourceModel) {
+	"sap/ui/model/resource/ResourceModel",
+	"sap/ui/core/UIComponent"
+], function (Controller, MessageToast, JSONModel, History, Fragment, ResourceModel, UIComponent) {
 	"use strict";
 
 	return Controller.extend("BWATC.BookstoreWebAppTC.controller.UpdateView", {
@@ -22,19 +23,9 @@ sap.ui.define([
 		
 		_loadModel: function(sIsbn){
 			
-		
-			// this.getView().byId("title").setValue(oBookModel.getProperty("title"));
 			$.get("api/v1/"+sIsbn, function(oData) {
 				this.getView().getModel("applicationBookModel").setProperty("/editedBook", oData);
 			}.bind(this));
-			// var request = $.ajax({
-			// 	url: "api/v1/",
-			// 	method: "GET"
-			// })
-
-			// request.done(function( ) {
-
-			// });
 		},
 
 
@@ -59,8 +50,7 @@ sap.ui.define([
 				});
 				
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-				oRouter.navTo("managerDetail",{
-					"isbn":this.getView().getModel("applicationBookModel").getProperty("isbn")});
+				oRouter.navTo("managerDetail");
 				 
 				request.fail(function( jqXHR, textStatus ) {
 				  alert( "Request failed: " + textStatus );
@@ -68,6 +58,11 @@ sap.ui.define([
 			
 			
 			
+		},
+
+		onNavBack: function() {
+			var oRouter = UIComponent.getRouterFor(this);
+			oRouter.navTo("detailManager",{"isbn":this.getView().getModel("applicationBookModel").getProperty("/editedBook").isbn});
 		}
 	});
 });

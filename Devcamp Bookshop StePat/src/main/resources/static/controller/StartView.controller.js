@@ -4,7 +4,6 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/mvc/Controller', 'sap/m/Message
 
 	var StartController = Controller.extend("BWATC.BookstoreWebAppTC.controller.StartView", {
 		press : function(evt) {
-			// MessageToast.show("The GenericTile is pressed.");
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("mainView");
 		},
@@ -15,8 +14,6 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/mvc/Controller', 'sap/m/Message
 		}
 	});
 
-	return StartController;
-{
-
+	return StartController;{
 	}
 });

@@ -21,19 +21,11 @@ sap.ui.define([
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("detail",{
 				"isbn":oListItemData.isbn});
-//			MessageToast.show("Book: "+ oListItemData.isbn + " has been pressed")
 			},
 			
 		onNavBack: function() {
-			var oHistory = History.getInstance();
-			var sPreviousHash = oHistory.getPreviousHash();
-
-			if (sPreviousHash !== undefined) {
-				window.history.go(-1);
-			}else {
-				var oRouter = UIComponent.getRouterFor(this);
-				oRouter.navTo("start", {}, true);
-			}
+			var oRouter = UIComponent.getRouterFor(this);
+			oRouter.navTo("start");
 		}	
 			
 			

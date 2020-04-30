@@ -11,7 +11,7 @@ xmlns="sap.m">
 					<Toolbar>
 					<Title text="Books" level="H2" />
 					<ToolbarSpacer/>
-					<Button text="Refresh List" press="onUpdate"/>
+					<Button text="Refresh List" press="onRefresh"/>
 					<Button type="Accept" text="Create Book" press="onCreate"/>
 					</Toolbar>
 						<List

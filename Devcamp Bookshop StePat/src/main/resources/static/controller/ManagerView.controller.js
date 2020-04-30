@@ -16,11 +16,9 @@ sap.ui.define([
 		},
 
 		_onObjectMatched: function(oEvent) {
-			// var sIsbn = oEvent.getParameter("arguments").isbn;
-			// if(sIsbn) {
-				
-			// }
-			this.getView().byId("List1").getBinding("items").refresh()
+			console.log("test");
+			// this.getView().byId("List1").getBinding("items").refresh();
+			// location.reload();
 		},
 		
 		onPress: function(oEvent){
@@ -32,63 +30,23 @@ sap.ui.define([
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("detailManager",{
 				"isbn":oListItemData.isbn});
-//			MessageToast.show("Book: "+ oListItemData.isbn + " has been pressed")
 		},
 
 		onNavBack: function() {
-			var oHistory = History.getInstance();
-			var sPreviousHash = oHistory.getPreviousHash();
-
-			if (sPreviousHash !== undefined) {
-				window.history.go(-1);
-			}else {
-				var oRouter = UIComponent.getRouterFor(this);
-				oRouter.navTo("start", {}, true);
-			}
+			var oRouter = UIComponent.getRouterFor(this);
+			oRouter.navTo("start");
 		},
-	
-		_getDialog: function () {
-            // create dialog lazily
-            if (!this._oDialog) {
-                // create dialog via fragment factory
-                this._oDialog = sap.ui.xmlfragment("addBooksDialog", "BWATC.BookstoreWebAppTC.view.Create", this);
-                // connect dialog to view (models, lifecycle)
-                this.getView().addDependent(this._oDialog);
-            }
-            return this._oDialog;
-        },
         
         onCreate: function () {
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("create");
-        },
-       
-        onCloseDialog: function () {
-            this._getDialog().close();
-        },
-       
-        onSaveDialog: function (oEvent) {
-			// var testST = sap.ui.getCore().byId("newTitle").getValue();
-			// var testST2 = this._getDialog("newTitle");
-			var test3 = this.getView().newTitle;
-			var testST2 = sap.ui.getCore().byId("addBooksDialog--newTitle").getValue();
-			// var testST2 = sap.ui.xmlfragment().byId("addBooksDialog", "newTitle").getValue();
-            // // var oSource = oEvent.getSource(),
-			// // oListItemData=
-			// // 	oSource.getObject();
-			var test1 ={
-						"Title": testST2
-			}	
-			console.log("Test" + test1 + testST2);
-			MessageToast.show(test3)
-			// var oBundle = this.getView().getModel("i18n").getResourceBundle();
-			// var sTitle = this.getView().getModel().getProperty("/title");
-			// MessageToast.show(sTitle);
 		},
-		
-		onUpdate: function() {
+
+		onRefresh: function() {
+			// this.getView().byId("List1").getBinding("items").refresh();
 			location.reload();
 		}
+		
 		
         
 });

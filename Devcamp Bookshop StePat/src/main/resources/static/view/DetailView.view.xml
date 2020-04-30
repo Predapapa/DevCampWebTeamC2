@@ -1,7 +1,7 @@
 <mvc:View controllerName="BWATC.BookstoreWebAppTC.controller.DetailView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" 
 xmlns="sap.m">
 	
-		<App >
+		<App>
 			<pages>
 				<Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress=".onNavBack"
 				binding="{/}">

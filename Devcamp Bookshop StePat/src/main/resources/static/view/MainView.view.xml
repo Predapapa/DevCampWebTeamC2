@@ -24,8 +24,6 @@
 					/>
 			</secondStatus>
 			<ObjectAttribute text="from {author}"/>
-			<!-- <ObjectAttribute text="isbn" text="{isbn}"/> -->
-			<!-- <ObjectAttribute text="uuid" text="{uuid}"/> -->
 		</ObjectListItem>
 	</List>
 					</content>
