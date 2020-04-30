@@ -25,6 +25,7 @@ sap.ui.define([
 			if(sIsbn){
 				var oBookModel = new JSONModel();
 				oBookModel.loadData("/api/v1/"+sIsbn);
+
 				this.getView().setModel(oBookModel);
 			}
 			else{
@@ -38,12 +39,12 @@ sap.ui.define([
 			var oHistory = History.getInstance();
 			var sPreviousHash = oHistory.getPreviousHash();
 
-			if (sPreviousHash !== undefined) {
-				window.history.go(-1);
-			}else {
+			// if (sPreviousHash !== undefined) {
+			// 	window.history.go(-1);
+			// }else {
 				var oRouter = UIComponent.getRouterFor(this);
-				oRouter.navTo("managerMain", {}, true);
-			}
+				oRouter.navTo("managerMain", this.getView().getModel().getProperty("/isbn"));
+			// }
 		},
 		
 		onDelete: function() {
@@ -57,13 +58,13 @@ sap.ui.define([
 			request.done(function( msg ) {
 				
 			}.bind(this));
-				 
-			
+			this.onNavBack();	
+		},
+
+		onEdit: function() {
 			var oRouter = UIComponent.getRouterFor(this);
-			oRouter.navTo("managerMain", {}, true);
-			
-			
-			
+			var sIsbn = this.getView().getModel().getData().isbn;
+				oRouter.navTo("update", {"isbn":sIsbn});
 		}
 	
 

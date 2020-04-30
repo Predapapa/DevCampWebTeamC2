@@ -95,7 +95,7 @@ public class BookController {
 	@PutMapping(path = "/updateBook", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity updateBook(@RequestBody Book book) {
 		bookService.updateBook(book);
-		return new ResponseEntity<>(null,HttpStatus.OK);
+		return new ResponseEntity<>(book,HttpStatus.OK);
 	}
 	
 	private BookDTO convertToDto(Book book) {

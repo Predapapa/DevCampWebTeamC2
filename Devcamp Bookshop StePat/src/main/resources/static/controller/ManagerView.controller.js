@@ -11,7 +11,16 @@ sap.ui.define([
 
 	return Controller.extend("BWATC.BookstoreWebAppTC.controller.ManagerView", {
 		onInit: function () {
-			
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.getRoute("managerMain").attachPatternMatched(this._onObjectMatched,this);
+		},
+
+		_onObjectMatched: function(oEvent) {
+			// var sIsbn = oEvent.getParameter("arguments").isbn;
+			// if(sIsbn) {
+				
+			// }
+			this.getView().byId("List1").getBinding("items").refresh()
 		},
 		
 		onPress: function(oEvent){

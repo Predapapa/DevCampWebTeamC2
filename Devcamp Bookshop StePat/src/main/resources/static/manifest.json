@@ -81,7 +81,7 @@
 				}
 			},
 				"applicationBookModel": {
-				"dataSource" : "",
+				"dataSource" : "applicationBookData",
 				"type": "sap.ui.model.json.JSONModel",
 				"settings": {
 					"defaultBindingMode": "TwoWay"
@@ -127,6 +127,11 @@
 				"target": ["TargetManagerDetailView"]
 			},
 			{
+				"name": "update",
+				"pattern": "update/{isbn}",
+				"target": ["TargetUpdateView"]
+			},
+			{
 				"name": "create",
 				"pattern": "create",
 				"target": ["TargetCreateView"]
@@ -153,6 +158,10 @@
 				"TargetManagerDetailView": {
 					"viewId": "DetailManagerView",
 					"viewName": "DetailManagerView"
+				},
+				"TargetUpdateView": {
+					"viewId": "UpdateView",
+					"viewName": "UpdateView"
 				},
 				"TargetCreateView": {
 					"viewId": "CreateView",

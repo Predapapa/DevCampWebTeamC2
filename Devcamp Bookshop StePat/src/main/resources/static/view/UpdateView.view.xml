@@ -1,4 +1,4 @@
-<mvc:View controllerName="BWATC.BookstoreWebAppTC.controller.CreateView" 
+<mvc:View controllerName="BWATC.BookstoreWebAppTC.controller.UpdateView" 
 xmlns:mvc="sap.ui.core.mvc" 
 xmlns:form="sap.ui.layout.form"
 displayBlock="true" 
@@ -17,7 +17,7 @@ xmlns="sap.m">
 				<Label text="Title" tooltip="Title"/>
 				<Input
 				id="title"
-				value="{applicationBookModel>/newBook/title}"
+				value="{applicationBookModel>/editedBook/title}"
 				placeholder="Enter title"
 				width="300px"
 				fieldWidth="200px" />
@@ -25,7 +25,7 @@ xmlns="sap.m">
 				<Label text="ISBN" tooltip="ISBN"/>
 				<Input
 				id="isbn"
-				value="{applicationBookModel>/newBook/isbn}"
+				value="{applicationBookModel>/editedBook/isbn}"
 				type="Number"
 				placeholder="Enter ISBN"
 				width="300px"
@@ -34,7 +34,7 @@ xmlns="sap.m">
 				<Label text="Published Year" tooltip="pubYear"/>
 				<MaskInput
 				id="pubyear"
-				value="{applicationBookModel>/newBook/pubyear}"
+				value="{applicationBookModel>/editedBook/pubyear}"
 				type="Number"
 				mask="9999"
 				placeholder="Enter year of publishing"
@@ -44,7 +44,7 @@ xmlns="sap.m">
 				<Label text="No. Stock" tooltip="stock"/>
 				<Input
 				id="stock"
-				value="{applicationBookModel>/newBook/stock}"
+				value="{applicationBookModel>/editedBook/stock}"
 				type="Number"
 				placeholder="Enter stock"
 				width="300px"
@@ -53,7 +53,7 @@ xmlns="sap.m">
 				<Label text="Author" tooltip="Author"/>
 				<Input
 				id="author"
-				value="{applicationBookModel>/newBook/author}"
+				value="{applicationBookModel>/editedBook/author}"
 				placeholder="Enter author"
 				width="300px"
 				fieldWidth="200px" />
@@ -61,7 +61,7 @@ xmlns="sap.m">
 				<Label text="Editor" tooltip="Editor"/>
 				<Input
 				id="editor"
-				value="{applicationBookModel>/newBook/editor}"
+				value="{applicationBookModel>/editedBook/editor}"
 				placeholder="Enter editor"
 				width="300px"
 				fieldWidth="200px" />
@@ -69,7 +69,7 @@ xmlns="sap.m">
 				<Label text="Price" tooltip="price"/>
 				<Input
 				id="price"
-				value="{applicationBookModel>/newBook/price}"
+				value="{applicationBookModel>/editedBook/price}"
 				type="Number"
 				placeholder="Enter price"
 				width="300px"
