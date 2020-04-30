@@ -17,7 +17,7 @@ sap.ui.define([
 
 		_onObjectMatched: function() {
 			console.log("test");
-			this.byId("List1").getBinding("items").getModel().refresh(true); 
+			// this.getView().byId("List1").getBinding("items").refresh();
 			// location.reload();
 		},
 		
