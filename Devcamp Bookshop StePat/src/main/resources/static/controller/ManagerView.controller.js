@@ -15,9 +15,9 @@ sap.ui.define([
 			oRouter.getRoute("managerMain").attachPatternMatched(this._onObjectMatched,this);
 		},
 
-		_onObjectMatched: function(oEvent) {
+		_onObjectMatched: function() {
 			console.log("test");
-			// this.getView().byId("List1").getBinding("items").refresh();
+			this.byId("List1").getBinding("items").getModel().refresh(true); 
 			// location.reload();
 		},
 		

@@ -46,7 +46,7 @@ sap.ui.define([
 			
 				 
 				request.done(function( msg ) {
-					MessageToast.show("Book created");
+					MessageToast.show("Book updated");
 				});
 				
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
