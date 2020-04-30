@@ -27,6 +27,7 @@ xmlns="sap.m">
 				id="isbn"
 				value="{applicationBookModel>/editedBook/isbn}"
 				type="Number"
+				editable= "false"
 				placeholder="Enter ISBN"
 				width="300px"
 				fieldWidth="200px"/>
